@@ -1,31 +1,58 @@
 import React, { Component } from 'react';
-import Stock from './chartApp.js';
 import './App.css';
+import InGame from './inGame.js';
 
 class App extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      //temp
+    constructor(props) {
+        super(props);
+        this.state = {
+          ticker: "AMZN",
+          startDate: "2013-05-01",
+          endDate: "2015-02-01",
+          shares: "100",
+          marketData: 'close'
+        }
+        this.handleNextClick = this.handleNextClick.bind(this);
     }
 
-  }
+    handleChange(ticker) {
+      this.setState((state, props) => ({
+        ticker: ticker,
+        startDate: "2011-05-01",
+        endDate: "2015-05-01",
+        shares: "100",
+        marketData: 'close'
+      }))
+    }
 
-      componentDidUpdate() {
-        //temp
+    handleNextClick() {
+      console.log("#### NEXT CLICKED! #####")
+      this.handleChange("TSLA")
       }
-  render() {
-    return (
-      <div className="App">
-      <div></div>
-            <div className="game">
-                  <h2>{this.state.ticker} Stock chart</h2>
-                    <p>charts with plotly.js</p>
-                    <Stock  
-                    ></Stock>
+
+    render() {
+        return (
+            <div>
+            <InGame
+              ticker = {this.state.ticker}
+              startDate = {this.state.startDate}
+              endDate = {this.state.endDate}
+              shares = {this.state.shares}
+              marketData = {this.state.marketData}
+            ></InGame>
+            <ul class="actions fit">
+              <li><button class="button alt fit" onClick={this.handleNextClick}>Next Game!</button></li>
+            </ul>
             </div>
-      </div>
-    );
+        )
+    }
+    // componentDidUpdate(prevProps) {
+    //     if (prevProps.stockChartXValues !== this.props.stockChartXValues) {
+    //         this.setState( {
+    //             // stockChartXValues : this.props.stockChartXValues,
+    //             // stockChartYValues : this.props.stockChartYValues
+    //         })
+    // 
+    
   }
-}
 export default App;
