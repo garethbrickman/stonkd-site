@@ -1,43 +1,142 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
   <head>
-    <meta charset="utf-8" />
-    <link rel="icon" href="%PUBLIC_URL%/favicon.ico" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="theme-color" content="#000000" />
-    <meta
-      name="description"
-      content="Web site created using create-react-app"
-    />
-    <link rel="apple-touch-icon" href="%PUBLIC_URL%/logo192.png" />
-    <!--
-      manifest.json provides metadata used when your web app is installed on a
-      user's mobile device or desktop. See https://developers.google.com/web/fundamentals/web-app-manifest/
-    -->
-    <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
-    <!--
-      Notice the use of %PUBLIC_URL% in the tags above.
-      It will be replaced with the URL of the `public` folder during the build.
-      Only files inside the `public` folder can be referenced from the HTML.
-
-      Unlike "/favicon.ico" or "favicon.ico", "%PUBLIC_URL%/favicon.ico" will
-      work correctly both with client-side routing and a non-root public URL.
-      Learn how to configure a non-root public URL by running `npm run build`.
-    -->
-    <title>React App</title>
+    <title>Stonkd</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="shortcut icon" href="images/icon.png">
+    <link rel="stylesheet" href="assets/css/index.css" />
   </head>
   <body>
-    <noscript>You need to enable JavaScript to run this app.</noscript>
-    <div id="root"></div>
-    <!--
-      This HTML file is a template.
-      If you open it directly in the browser, you will see an empty page.
+		<!-- Header -->
+    <header id="header" class="alt">
+      <div class="logo"><a href="about.html">got <span>Stonkd?</span></a></div>
+      <a href="#menu">Menu</a>
+    </header>
+      <!-- Nav -->
+			<nav id="menu">
+				<ul class="links">
+					<li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="resources.html">Resources</a></li>
+					<li><a href="signin.html">Login</a></li>
+					<li><a href="signup.html">Sign up</a></li>
+				</ul>
+      </nav>
+      		<!-- Banner -->
+			<section id="banner">
+				<div class="inner">
+					<header>
+						<h1>Stonkd</h1>
+						<p>Go play</p>
+					</header>
+					<a href="#main" class="button big scrolly">Play</a>
+				</div>
+			</section>
 
-      You can add webfonts, meta tags, or analytics to this file.
-      The build step will place the bundled scripts into the <body> tag.
+      <!-- Main -->
+      <main>
+			<div id="main">
 
-      To begin the development, run `npm start` or `yarn start`.
-      To create a production bundle, use `npm run build` or `yarn build`.
-    -->
+				<!-- Section -->
+					<section class="wrapper style1">
+						<div class="inner">
+							<!-- 2 Columns -->
+								<div class="flex flex-2">
+                  <div class="col col2">
+                    <article>
+                      <div id="root"></div>
+                    </article>
+                  </div>
+									<div class="col col1">
+										<div>
+                      <aside>
+                        <div class="flex flex-2">
+                            <div class="col col2">
+                              <!-- Table -->
+                              <h4>High Scores</h4>
+                              <div class="table-wrapper">
+                                <table>
+                                  <thead>
+                                    <tr>
+                                      <th>Place</th>
+                                      <th>Name</th>
+                                      <th>Score</th>
+                                    </tr>
+                                  </thead>
+                                  <tbody>
+                                    <tr>
+                                      <td>1</td>
+                                      <td>Jerry</td>
+                                      <td>$1,000,000</td>
+                                    </tr>
+                                    <tr>
+                                      <td>2</td>
+                                      <td>Tom</td>
+                                      <td>$904,920.00</td>
+                                    </tr>
+                                  </tbody>
+                                </table>
+                              </div>
+                            </div>
+                            <div class="col col1">
+                              <div class="image round fit">
+                                <a href="generic.html" class="link"><img src="images/stonks.png" alt="" /></a>
+                            </div>
+                          </div>
+                            <div class="flex flex-2">
+                            <div class="col col2">
+                              <div class="tables" id="stonkd_table">
+                                <!-- Table -->
+                              <h4>High Stonkd</h4>
+                              <div class="table-wrapper">
+                                <table>
+                                  <thead>
+                                    <tr>
+                                      <th>Place</th>
+                                      <th>Name</th>
+                                      <th>Score</th>
+                                    </tr>
+                                  </thead>
+                                  <tbody>
+                                    <tr>
+                                      <td>1</td>
+                                      <td>Joe</td>
+                                      <td>$0.00</td>
+                                    </tr>
+                                    <tr>
+                                      <td>2</td>
+                                      <td>Jane</td>
+                                      <td>$659.32</td>
+                                    </tr>
+                                  </tbody>
+                                </table>
+                              </div>
+                            </div>
+                            </div>
+                            <div class="col col1">
+                              <div class="image round fit">
+                                <a href="generic.html" class="link"><img src="images/notstonks.jpg" alt="" /></a>
+                              </div>
+                            </div>
+                          </div>
+                          </div>
+                      </aside>
+										</div>
+									</div>
+
+								</div>
+						</div>
+					</section>
+    </main>
+    <footer> the footer </footer>
+    		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/jquery.scrolly.min.js"></script>
+			<script src="assets/js/jquery.scrollex.min.js"></script>
+			<script src="assets/js/skel.min.js"></script>
+			<script src="assets/js/util.js"></script>
+      <script src="assets/js/main.js"></script>
+      <script src="https://code.highcharts.com/highcharts.js"></script>
   </body>
 </html>
