@@ -2,15 +2,22 @@ import React, { Component } from 'react';
 import './App.css';
 import InGame from './inGame.js';
 
+
 class App extends Component {
     constructor(props) {
         super(props);
         this.state = {
           ticker: "AMZN",
           startDate: "2013-05-01",
-          endDate: "2015-02-01",
+          _endDate: "2015-02-01",
+          get endDate() {
+            return this._endDate;
+          },
+          set endDate(value) {
+            this._endDate = value;
+          },
           shares: "100",
-          marketData: 'close'
+          marketData: 'close',
         }
         this.handleNextClick = this.handleNextClick.bind(this);
     }
@@ -21,7 +28,7 @@ class App extends Component {
         startDate: "2011-05-01",
         endDate: "2015-05-01",
         shares: "100",
-        marketData: 'close'
+        marketData: 'close',
       }))
     }
 
@@ -40,9 +47,11 @@ class App extends Component {
               shares = {this.state.shares}
               marketData = {this.state.marketData}
             ></InGame>
-            <ul class="actions fit">
-              <li><button class="button alt fit" onClick={this.handleNextClick}>Next Game!</button></li>
-            </ul>
+            <div>
+              <ul class="actions fit">
+                <li><button class="button alt fit" onClick={this.handleNextClick}>Next Game!</button></li>
+              </ul>
+            </div>
             </div>
         )
     }

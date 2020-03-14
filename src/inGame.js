@@ -139,7 +139,7 @@ class InGame extends React.Component {
           }
     
       componentDidMount() {
-        this.setPlot()
+        this.setPlot(this.props.ticker, this.props.startDate, this.props.endDate)
         }
       componentDidUpdate(prevProps) {
         if (prevProps.ticker !== this.props.ticker) {
