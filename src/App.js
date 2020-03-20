@@ -3,41 +3,52 @@ import './App.css';
 import InGame from './inGame.js';
 
 
+let games = require("./data/stockpickergame.json")
+
 class App extends Component {
     constructor(props) {
+        let num = 1
         super(props);
         this.state = {
-          ticker: "AMZN",
-          startDate: "2013-05-01",
-          _endDate: "2015-02-01",
-          get endDate() {
-            return this._endDate;
-          },
-          set endDate(value) {
-            this._endDate = value;
-          },
-          shares: "100",
-          marketData: 'close',
+          key: num,
+          ticker: games["game" + num]["ticker"],
+          startDate: games["game" + num]["startDate"],
+          endDate: games["game" + num]["endDate"],
+          shares: games["game" + num]["shares"],
+          marketData: games["game" + num]["marketData"],
+          jump: games["game" + num]["jump"]
         }
         this.handleNextClick = this.handleNextClick.bind(this);
     }
 
-    handleChange(ticker) {
+    handleChange() {
+      let num = this.state.key + 1
       this.setState((state, props) => ({
-        ticker: ticker,
-        startDate: "2011-05-01",
-        endDate: "2015-05-01",
-        shares: "100",
-        marketData: 'close',
+        key: num,
+        ticker: games["game" + num]["ticker"],
+        startDate: games["game" + num]["startDate"],
+        endDate: games["game" + num]["endDate"],
+        shares: games["game" + num]["shares"],
+        marketData: games["game" + num]["marketData"],
+        jump: games["game" + num]["jump"]
       }))
     }
 
     handleNextClick() {
       console.log("#### NEXT CLICKED! #####")
-      this.handleChange("TSLA")
+      this.handleChange()
+      }
+    componentDidMount() {
+      //pass
       }
 
     render() {
+      console.log("Game Change")
+      console.log(this.state.ticker)
+      console.log(this.state.startDate)
+      console.log(this.state.endDate)
+      console.log(this.state.shares)
+      console.log(this.state.marketData)
         return (
             <div>
             <InGame
@@ -46,10 +57,11 @@ class App extends Component {
               endDate = {this.state.endDate}
               shares = {this.state.shares}
               marketData = {this.state.marketData}
+              jump = {this.state.jump}
             ></InGame>
             <div>
-              <ul class="actions fit">
-                <li><button class="button alt fit" onClick={this.handleNextClick}>Next Game!</button></li>
+              <ul className="actions fit">
+                <li><button className="button alt fit" onClick={this.handleNextClick}>Next Chart!</button></li>
               </ul>
             </div>
             </div>
