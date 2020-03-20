@@ -16,13 +16,16 @@ class App extends Component {
           endDate: games["game" + num]["endDate"],
           shares: games["game" + num]["shares"],
           marketData: games["game" + num]["marketData"],
-          jump: games["game" + num]["jump"]
+          jump: games["game" + num]["jump"],
+          endPrice: games["game" + num]["endPrice"]["close"],
+          jumpPrice: games["game" + num]["jumpPrice"]["close"]
         }
         this.handleNextClick = this.handleNextClick.bind(this);
     }
 
     handleChange() {
       let num = this.state.key + 1
+      if (num < 16) {
       this.setState((state, props) => ({
         key: num,
         ticker: games["game" + num]["ticker"],
@@ -30,8 +33,13 @@ class App extends Component {
         endDate: games["game" + num]["endDate"],
         shares: games["game" + num]["shares"],
         marketData: games["game" + num]["marketData"],
-        jump: games["game" + num]["jump"]
+        jump: games["game" + num]["jump"],
+        endPrice: games["game" + num]["endPrice"]["close"],
+        jumpPrice: games["game" + num]["jumpPrice"]["close"]
       }))
+    } else {
+      alert("GAME OVER REFRESH TO PLAY AGAIN. HIGH SCORE FEATURE COMING SOON")
+    }
     }
 
     handleNextClick() {
@@ -58,6 +66,9 @@ class App extends Component {
               shares = {this.state.shares}
               marketData = {this.state.marketData}
               jump = {this.state.jump}
+              endPrice = {parseInt(this.state.endPrice)}
+              jumpPrice = {parseInt(this.state.jumpPrice)}
+              cash = {10000}
             ></InGame>
             <div>
               <ul className="actions fit">
