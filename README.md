@@ -2,6 +2,8 @@
 
 Get a taste of the ups & downs of the stock market with our web app in a quirky, risk-free environment.
 
+Live site: https://www.stonkd.com
+
 Powered by [Create React App](https://github.com/facebook/create-react-app).
 
 Created by [Jose Alvarez de Lugo](https://www.linkedin.com/in/josealvarezdelugo/) & [Gareth Brickman](https://www.linkedin.com/in/gareth-brickman-b62b56101/).
