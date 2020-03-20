@@ -4,8 +4,8 @@
     <title>Stonkd</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="shortcut icon" href="%PUBLIC_URL%/favicon.ico">
-    <link rel="stylesheet" href="assets/css/fourohfou.css" />
+    <link rel="shortcut icon" href="images/icon.png">
+    <link rel="stylesheet" href="assets/css/index.css" />
 
     <!-- Global site tag (gtag.js) - Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=UA-160728838-1"></script>
@@ -31,23 +31,50 @@
           <li><a href="resources.html">Resources</a></li>
           <li><a href="feedback.html">Feedback</a></li>
           <li><a href="freePlay.html">Free Search</a></li>
-				</ul>
+        </ul>
       </nav>
       		<!-- Banner -->
 			<section id="banner">
 				<div class="inner">
 					<header>
 						<h1>Stonkd</h1>
-						<p>404 Error: Page not found</p>
+						<p>Search Stock Charts!</p>
 					</header>
-					<a href="index.html" class="button big scrolly">Play</a>
+					<a href="#main" class="button big scrolly">Search</a>
 				</div>
 			</section>
 
       <!-- Main -->
-      <main>
-			<div id="main">
-      </div>
+      <main id="main">
+		  <div>
+			  <h1 style="text-align:center">Stock Charts and Indicators</h1>
+			  <p style="text-align:center; color:'black'; font-size:'16px'">'The information provided is for information purposes only.  It is not intended to be investment advice.  Seek a duly licensed professional for investment advice.' </p>
+		  </div>
+		<!-- TradingView Widget BEGIN -->
+		<div class="tradingview-widget-container">
+			<div id="tradingview_a53d8"></div>
+			<div class="tradingview-widget-copyright"><a href="https://www.tradingview.com/symbols/NASDAQ-AAPL/" rel="noopener" target="_blank"><span class="blue-text">AAPL Chart</span></a> by TradingView</div>
+			<script type="text/javascript" src="https://s3.tradingview.com/tv.js"></script>
+			<script type="text/javascript">
+			new TradingView.widget(
+			{
+			"width": 980,
+			"height": 610,
+			"symbol": "NASDAQ:AAPL",
+			"interval": "D",
+			"timezone": "Etc/UTC",
+			"theme": "light",
+			"style": "1",
+			"locale": "en",
+			"toolbar_bg": "#f1f3f6",
+			"enable_publishing": false,
+			"allow_symbol_change": true,
+			"container_id": "tradingview_a53d8"
+		}
+			);
+			</script>
+		</div>
+		<!-- TradingView Widget END -->
     </main>
     <footer> the footer </footer>
     		<!-- Scripts -->
